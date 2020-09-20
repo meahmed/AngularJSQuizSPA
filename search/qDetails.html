@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Question Id: {{questionDetails.id}}
+            <span class="badge">{{questionDetails.stats.askedCount}}</span>
+            <div class="panel-tools"><button ng-click="backToSearch()">Back</button></div>
+
+        </div>
+        <div class="panel-body">
+            <p>{{questionDetails.question}}</p>
+            <p class="text-left"> Author: {{questionDetails.author}}</p>
+            <p class="text-right">Last Asked on: {{questionDetails.stats.lastAskedDate}}</p>
+            <p class="text-right">%of Successful answers: {{questionDetails.stats.correctlyAnsUPC}}</p>
+        </div>
+
+        <!-- List group -->
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="options in questionDetails.answers">
+                {{$index+1}}) {{options}}
+            </li>
+        </ul>
+    </div>
+</div>
